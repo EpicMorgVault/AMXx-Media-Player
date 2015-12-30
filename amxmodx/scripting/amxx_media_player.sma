@@ -70,7 +70,7 @@ public mh_MyMenu(id, menu, item) {
 public plugin_precache() {
 	new songdir2[64];
 	get_configsdir(configsdir,sizeof(configsdir));
-	format(configfile,sizeof(configfile),"%s/music.ini",configsdir);
+	format(configfile,sizeof(configfile),"%s/mediaplayer_music.ini",configsdir);
 	new trash, index;
 	for(new i=0;i<MAX_SONGS;i++) {
 		precached[i]=false;
