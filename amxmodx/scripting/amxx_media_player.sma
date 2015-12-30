@@ -1,22 +1,22 @@
 #include <amxmodx>
 #include <amxmisc>
 
-#define PLUGIN "AMX Musical Playlist"
-#define VERSION "1.1"
+#define PLUGIN "AMX Media Player"
+#define VERSION "1.1.1"
 #define AUTHOR "AurZum (EpicMorg)"
 
 #define MAX_SONGS	10 //set number of songs you want, default 10
 
 new configsdir[200]
 new configfile[200]
-new song[MAX_SONGS][64]
-new songdir[MAX_SONGS][64]
+new song[MAX_SONGS][256]
+new songdir[MAX_SONGS][256]
 new bool:precached[MAX_SONGS]
 new indexs[MAX_SONGS]
 
 public plugin_init() {
 	register_plugin(PLUGIN, VERSION, AUTHOR)
-	register_clcmd("amx_playlist_menu", "show_palylist_menu", ADMIN_LEVEL_E, "");
+	register_clcmd("amx_show_playlist", "show_palylist_menu", ADMIN_LEVEL_E, "");
 	register_concmd("amx_play","cmd_play",ADMIN_LEVEL_E," <Part Of Filename> ")
 	register_concmd("amx_playlist","cmd_playlist",ADMIN_LEVEL_E," Displays a list of songs in the server playlist. ")
 	register_concmd("amx_stopplay","cmd_stop",ADMIN_LEVEL_E," Stops currently playing sounds/music. ")
@@ -76,8 +76,8 @@ public plugin_precache() {
 		precached[i]=false;
 		read_file(configfile,i,song[i],63,trash);
 		if(!equali(song[i][4],"")) {
-			format(songdir[i],63,"music/epicmorg/%s",song[i]);
-			format(songdir2,63,"sound/music/epicmorg/%s",song[i]);
+			format(songdir[i],63,"music/mediaplayer/%s",song[i]);
+			format(songdir2,63,"sound/music/mediaplayer/%s",song[i]);
 			if(file_exists(songdir2)) {
 				precached[i]=true
 				precache_sound(songdir[i])
