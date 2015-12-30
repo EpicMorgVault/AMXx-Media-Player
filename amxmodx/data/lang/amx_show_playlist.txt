@@ -1,0 +1,25 @@
+[en]
+PREV = Prev
+NEXT = Next
+EXIT = Exit
+MSG1 = Stops currently playing sounds/music.
+MSG2 = Songs in server playlist:
+MSG3 = mp3 stop;stopsound
+MSG4 = Admin Turned The Music Off.
+MSG5 = More than one file contains that phrase in it.
+MSG6 = No file containing that phrase was found
+MSG7 = mp3 stop;stopsound
+MSG8 = Music stopped
+
+[ru]
+PREV = След
+NEXT = Пред
+EXIT = Выход
+MSG1 = Остановлен текущий трек
+MSG2 = Песни в playlist:
+MSG3 = mp3 stop;stopsound
+MSG4 = Админ выключил музыку
+MSG5 = Надено более одного трека по фразе
+MSG6 = Не найдет трек по фразе
+MSG7 = mp3 stop;stopsound
+MSG8 = Остановлен трек
